@@ -1,0 +1,27 @@
+.markdown|jinja|markdown|easyhtml:
+    - script:screenshots
+    - code
+
+### @export "screenshots"
+script:screenshots:
+    - setup.sh|idio|shint|pyg:
+        - .py
+        - .sql
+        - .html
+    - screenshots.js|casperjs
+    - teardown.sh|idio|shint|pyg
+
+### @export "code"
+code:
+    - .js|pyg
+    - .js|idio
+    - .py|pyg
+    - .py|idio
+    - .html|pyg
+    - .html|idio
+    - .sql|pyg
+    - .sql|idio
+    - dexy.yaml|pyg
+    - dexy.yaml|idio
+    - .markdown|pyg:
+        - pyg: { 'lexer' : 'moin' }
